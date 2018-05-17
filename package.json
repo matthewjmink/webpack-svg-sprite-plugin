@@ -1,6 +1,6 @@
 {
   "name": "webpack-svg-sprite-plugin",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Build an SVG sprite file with Webpack and svg-sprite using configuration rather than imported dependencies in your app bundles.",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/matthewjmink/webpack-svg-sprite-plugin/issues"
   },
-  "homepage": "https://github.com/matthewjmink/webpack-svg-sprite-plugin#readme"
+  "homepage": "https://github.com/matthewjmink/webpack-svg-sprite-plugin#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "mkdirp": "^0.5.1",
+    "path": "^0.12.7",
+    "svg-sprite": "^1.4.0"
+  }
 }
