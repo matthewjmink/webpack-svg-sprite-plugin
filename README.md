@@ -1,7 +1,7 @@
 # Webpack SVG Sprite Plugin
 Build an SVG sprite with Webpack and [svg-sprite](https://github.com/jkphl/svg-sprite) using configuration rather than imported dependencies in your app bundles. This is helpful if your app is not entirely powered by your bundled files - for example, a multi-page application made up of server-side and client-side components.
 
-##Usage
+## Usage
 **webpack.config.babel.js**
 ```javascript
 import path from 'path';
@@ -33,7 +33,7 @@ It's up to you to include the sprite in your app now, but once you've got it, yo
         <use href="#user"></use>
     </svg>
 ```
-##Options
+## Options
 |Name|Type|Default|Description|
 |---|---|---|---|
 |**icons**|`Array<String>` \| `String`|`[]`|Either an array of icon names, or a reference to a config file containing the list. Each icon's file name will be used as the ID (i.e. `icon-name.svg` will be `'icon-name'`).|
