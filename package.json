@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/matthewjmink/webpack-svg-sprite-plugin.git"
   },
-  "author": "Matt Mink",
+  "author": "Matt Mink <matthewjmink@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/matthewjmink/webpack-svg-sprite-plugin/issues"
