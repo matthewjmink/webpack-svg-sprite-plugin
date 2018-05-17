@@ -1,5 +1,5 @@
 {
-  "name": "webpack-svg-sprite-plugin",
+  "name": "webpack-svg-sprite",
   "version": "0.0.1",
   "description": "Build an SVG sprite file with Webpack and svg-sprite using configuration rather than imported dependencies in your app bundles.",
   "main": "index.js",
