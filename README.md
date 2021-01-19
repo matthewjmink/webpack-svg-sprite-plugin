@@ -6,7 +6,7 @@ Build an SVG sprite with Webpack and [svg-sprite](https://github.com/jkphl/svg-s
 ```javascript
 import path from 'path';
 import webpack from 'webpack';
-import WebpackSVGSpritePlugin from 'webpack-svg-sprite';
+import WebpackSVGSpritePlugin from 'webpack-svg-sprite-plugin';
 import icons from './svg-sprite.js';
 ...
 module.exports = {
