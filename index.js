@@ -1,9 +1,9 @@
-import SVGSpriter from 'svg-sprite';
-import mkdirp from 'mkdirp';
-import path from 'path';
-import fs from 'fs';
+const SVGSpriter = require('svg-sprite');
+const mkdirp = require('mkdirp');
+const path = require('path');
+const fs = require('fs');
 
-export default class WebpackSVGSpritePlugin {
+class WebpackSVGSpritePlugin {
     constructor({
         icons = [],
         context = path.resolve(__dirname, 'icons'),
@@ -69,3 +69,5 @@ export default class WebpackSVGSpritePlugin {
         });
     }
 }
+
+module.exports = WebpackSVGSpritePlugin;
