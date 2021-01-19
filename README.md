@@ -40,3 +40,4 @@ It's up to you to include the sprite in your app now, but once you've got it, yo
 |**context**|`String`|`'./icons'`|The path to the folder containing the separate SVG icon files.|
 |**dest**|`String`|`'./dist'`|The path to the output folder where the generated SVG sprite file will be placed.|
 |**filename**|`String`|`'sprite.svg'` <br>or the name of the config file if `options.icons` is a string.|The name of the generated SVG sprite file. (i.e. `'svg-sprite.svg'`|
+|**config**|`Object`|`{}`|Specific options to pass to [svg-sprite](https://github.com/jkphl/svg-sprite) constructor|
