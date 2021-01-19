@@ -33,7 +33,7 @@ export default class WebpackSVGSpritePlugin {
         this.config = config;
     }
     apply(compiler) {
-        compiler.plugin('after-emit', (compilation, callback) => {
+        compiler.hooks.afterEmit.tapAsync('SVGSprite', (compilation, callback) => {
             if (this.icons.length > 0) {
                 const spriter = new SVGSpriter(Object.assign({
                     dest: 'out',
