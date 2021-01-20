@@ -1,14 +1,15 @@
-import SVGSpriter from 'svg-sprite';
-import mkdirp from 'mkdirp';
-import path from 'path';
-import fs from 'fs';
+const SVGSpriter = require('svg-sprite');
+const mkdirp = require('mkdirp');
+const path = require('path');
+const fs = require('fs');
 
-export default class WebpackSVGSpritePlugin {
+class WebpackSVGSpritePlugin {
     constructor({
         icons = [],
         context = path.resolve(__dirname, 'icons'),
         dest = path.resolve(__dirname, 'dist'),
-        filename = null
+        filename = null,
+        config = {}
     } = {}) {
         if (typeof icons === 'string') {
             let iconImport = require(icons);
@@ -29,11 +30,12 @@ export default class WebpackSVGSpritePlugin {
             ? this.iconsFile.slice(this.iconsFile.lastIndexOf('/') + 1, this.iconsFile.lastIndexOf('.'))
             : 'sprite') + '.svg';
         this.dest = dest;
+        this.config = config;
     }
     apply(compiler) {
-        compiler.plugin('after-emit', (compilation, callback) => {
+        compiler.hooks.afterEmit.tapAsync('SVGSprite', (compilation, callback) => {
             if (this.icons.length > 0) {
-                const spriter = new SVGSpriter({
+                const spriter = new SVGSpriter(Object.assign({
                     dest: 'out',
                     mode: {
                         inline: true,
@@ -42,7 +44,7 @@ export default class WebpackSVGSpritePlugin {
                             sprite: this.filename
                         }
                     }
-                });
+                }, this.config));
 
                 this.icons.forEach(icon => {
                     const svgFilename = `${icon}.svg`;
@@ -67,3 +69,5 @@ export default class WebpackSVGSpritePlugin {
         });
     }
 }
+
+module.exports = WebpackSVGSpritePlugin;
